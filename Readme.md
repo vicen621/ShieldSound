@@ -25,7 +25,7 @@ You can select on which worlds it works, being compatible with any world manager
 
 ![Default configuration](https://cdn.discordapp.com/attachments/750934684887941140/985647790589894656/dg.png)
 ```yaml
-                      Plugin made by:
+#                      Plugin made by:
 # ██╗░░░██╗██╗░█████╗░███████╗███╗░░██╗░█████╗░██████╗░░░███╗░░
 # ██║░░░██║██║██╔══██╗██╔════╝████╗░██║██╔═══╝░╚════██╗░████║░░
 # ╚██╗░██╔╝██║██║░░╚═╝█████╗░░██╔██╗██║██████╗░░░███╔═╝██╔██║░░
