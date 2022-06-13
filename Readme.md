@@ -5,8 +5,8 @@
 [![Build Status](https://github.com/Vicen621/ShieldSound/workflows/Build/badge.svg)](../../actions?query=workflow%3ABuild)
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Vicen621/ShieldSound?include_prereleases&label=release)](../../releases)
 ![Spiget tested server versions](https://img.shields.io/badge/tested%20versions-1.9--1.19-blue)
-[![Spiget Downloads](https://img.shields.io/spiget/downloads/102577)](https://www.spigotmc.org/resources/shieldsound.102577/)
-[![Spiget Rating](https://img.shields.io/spiget/rating/102577)](https://www.spigotmc.org/resources/shieldsound.102577/)
+[![Spiget Downloads](https://img.shields.io/spiget/downloads/102577)](https://www.spigotmc.org/resources/1-9-1-19-shieldsound.102577/)
+[![Spiget Rating](https://img.shields.io/spiget/rating/102577)](https://www.spigotmc.org/resources/1-9-1-19-shieldsound.102577/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
 [![semantic-release](https://img.shields.io/badge/%20%20%F0%9F%93%A6%F0%9F%9A%80-semantic--release-e10079.svg)](https://github.com/semantic-release/semantic-release)
 
@@ -25,7 +25,7 @@ You can select on which worlds it works, being compatible with any world manager
 
 ![Default configuration](https://cdn.discordapp.com/attachments/750934684887941140/985647790589894656/dg.png)
 ```yaml
-                      Plugin made by:
+#                      Plugin made by:
 # ██╗░░░██╗██╗░█████╗░███████╗███╗░░██╗░█████╗░██████╗░░░███╗░░
 # ██║░░░██║██║██╔══██╗██╔════╝████╗░██║██╔═══╝░╚════██╗░████║░░
 # ╚██╗░██╔╝██║██║░░╚═╝█████╗░░██╔██╗██║██████╗░░░███╔═╝██╔██║░░
