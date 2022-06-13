@@ -59,7 +59,7 @@ public class VersionChecker {
 
     public String getNewVersion() {
         try {
-            URLConnection con = new URL("https://api.spigotmc.org/legacy/update.php?resource=4216").openConnection(); //TODO: modify this
+            URLConnection con = new URL("https://api.spigotmc.org/legacy/update.php?resource=102577").openConnection();
             String version = new BufferedReader(new InputStreamReader(con.getInputStream())).readLine();
             if (version.length() <= 8)
                 return version;

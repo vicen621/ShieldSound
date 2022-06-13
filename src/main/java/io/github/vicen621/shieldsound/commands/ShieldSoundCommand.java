@@ -60,7 +60,7 @@ public class ShieldSoundCommand extends BaseCommand {
                 if (!version.equalsIgnoreCase(official)) {
                     TextComponent text = new TextComponent(Utils.format("&eNew version available: &6" + official));
                     text.setHoverEvent(new HoverEvent(HoverEvent.Action.SHOW_TEXT, new TextComponent[]{new TextComponent(Utils.format("&r&2Click to download"))}));
-                    text.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.spigotmc.org/resources/?/updates")); //TODO: Change to official link
+                    text.setClickEvent(new ClickEvent(ClickEvent.Action.OPEN_URL, "https://www.spigotmc.org/resources/102577/updates"));
                     if (sender instanceof Player)
                         ((Player) sender).spigot().sendMessage(ChatMessageType.CHAT, text);
                     else
