@@ -1,0 +1,11 @@
+name: ShieldSound
+version: ${project.version}
+main: io.github.vicen621.shieldsound.ShieldSound
+author: Vicen621
+api-version: 1.13
+description: An easy-to-use plugin that fixes the annoying error of when a shield breaks and does not play the sound
+website: https://www.spigotmc.org/resources/1-9-1-19-shieldsound.102577/
+
+permissions:
+  shieldsound.reload:
+    default: op

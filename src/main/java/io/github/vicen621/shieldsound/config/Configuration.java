@@ -15,6 +15,7 @@ import java.io.File;
 import java.util.Collections;
 import java.util.List;
 
+//TODO: Update ConfigLib to the new version
 @Comment({"",
         "                       Plugin made by:",
         "                          Vicen621"})
