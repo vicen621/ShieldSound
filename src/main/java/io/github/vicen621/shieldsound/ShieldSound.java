@@ -40,10 +40,6 @@ public final class ShieldSound extends JavaPlugin {
     @Getter(AccessLevel.PUBLIC)
     private double version;
 
-    protected ShieldSound(JavaPluginLoader loader, PluginDescriptionFile description, File dataFolder, File file) {
-        super(loader, description, dataFolder, file);
-    }
-
     @Override
     public void onEnable() {
         instance = this;
