@@ -1,3 +1,10 @@
+## [1.0.2](https://github.com/vicen621/ShieldSound/compare/v1.0.1...v1.0.2) (2022-07-27)
+
+
+### Bug Fixes
+
+* fixed plugin.yml ([223c83f](https://github.com/vicen621/ShieldSound/commit/223c83f2c976a94b0d42c26734e700163da49da1))
+
 ## [1.0.1](https://github.com/vicen621/ShieldSound/compare/v1.0.0...v1.0.1) (2022-07-21)
 
 
