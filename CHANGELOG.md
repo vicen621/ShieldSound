@@ -1,3 +1,10 @@
+## [1.0.3](https://github.com/vicen621/ShieldSound/compare/v1.0.2...v1.0.3) (2022-07-27)
+
+
+### Bug Fixes
+
+* removed constructor in ShieldSound.java ([fa29b1c](https://github.com/vicen621/ShieldSound/commit/fa29b1c71c5234f55c7f7d62c2df45737dddd5a8))
+
 ## [1.0.2](https://github.com/vicen621/ShieldSound/compare/v1.0.1...v1.0.2) (2022-07-27)
 
 
