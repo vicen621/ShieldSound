@@ -37,9 +37,9 @@ You can select on which worlds it works, being compatible with any world manager
 # Here you have a list of sounds you can choose from.
 # https://papermc.io/javadocs/paper/1.17/org/bukkit/Sound.html
 break_sound:
-sound: ITEM_SHIELD_BREAK
-volume: 1.0
-pitch: 1.0
+  sound: ITEM_SHIELD_BREAK
+  volume: 1.0
+  pitch: 1.0
 
 # List of worlds where the sound will not be played
 deactivated_worlds:
