@@ -1,12 +1,6 @@
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-}
-
 plugins {
-    id 'com.github.johnrengelman.shadow' version '7.1.2'
-    id 'io.freefair.lombok' version '6.4.3'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+    id 'io.freefair.lombok' version '8.6'
     id 'java'
     id 'idea'
 }
@@ -29,8 +23,6 @@ group project.property("group")
 compileJava {
     options.encoding = 'UTF-8'
     options.compilerArgs += ["-parameters"]
-    options.fork = true
-    options.forkOptions.executable = 'javac'
 }
 
 archivesBaseName = project.property("pluginName")
@@ -51,7 +43,7 @@ dependencies {
 }
 
 shadowJar {
-    classifier("")
+    archiveClassifier.set("")
     minimize()
     relocate 'co.aikar.commands', "${packageName}.acf"
     relocate 'co.aikar.locales', "${packageName}.locales"
