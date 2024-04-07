@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/vicen621/ShieldSound/compare/v1.0.3...v1.1.0) (2024-04-07)
+
+
+### Features
+
+* updated plugin to 1.20.4 ([45eb2da](https://github.com/vicen621/ShieldSound/commit/45eb2da4117964adc1f5939fb070c6ce78e92715))
+
 ## [1.0.3](https://github.com/vicen621/ShieldSound/compare/v1.0.2...v1.0.3) (2022-07-27)
 
 
