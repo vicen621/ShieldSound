@@ -8,11 +8,9 @@ plugins {
     id 'com.github.johnrengelman.shadow' version '7.1.2'
     id 'io.freefair.lombok' version '6.4.3'
     id 'java'
-    id 'jacoco'
     id 'idea'
 }
 
-apply from: "$rootDir/gradle/jacoco.gradle"
 apply from: "$rootDir/gradle/publish.gradle"
 
 if (project.hasProperty("local_script")) {
@@ -40,37 +38,21 @@ archivesBaseName = project.property("pluginName")
 repositories {
     mavenLocal()
     mavenCentral()
-    maven { url 'https://jitpack.io/' }
     maven { url 'https://hub.spigotmc.org/nexus/content/repositories/snapshots/' }
-    maven { url 'https://repo.codemc.io/repository/nms/' }
-    maven { url 'https://oss.sonatype.org/content/repositories/snapshots' }
-    maven { url 'https://oss.sonatype.org/content/groups/public/' }
     maven { url 'https://repo.aikar.co/content/groups/aikar/' }
 }
 
 dependencies {
     compileOnly("org.spigotmc:spigot-api:${mcVersion}-R0.1-SNAPSHOT")
 
-    // Add your dependencies here
-    // Here are some opinionated dependencies that might help you with your plugin development:
-
     // Annotation Command Framework: https://github.com/aikar/commands
-    implementation "co.aikar:acf-paper:0.5.1-SNAPSHOT"
-
-    implementation ('net.silthus.configlib:configlib-bukkit:2.6.0') {
-        exclude group: 'org.spigotmc', module: 'spigot-api'
-    }
+    implementation("co.aikar:acf-paper:0.5.1-SNAPSHOT")
+    implementation("de.exlll:configlib-paper:4.5.0")
 }
 
 shadowJar {
-    classifier ""
+    classifier("")
     minimize()
-    dependencies {
-        include(dependency('co.aikar:acf-paper:0.5.1-SNAPSHOT'))
-        include(dependency('net.silthus.configlib:configlib-bukkit:'))
-        include(dependency('me.yushust.message:core:'))
-        include(dependency('me.yushust.message:sourcetype-bukkit-yml:'))
-    }
     relocate 'co.aikar.commands', "${packageName}.acf"
     relocate 'co.aikar.locales', "${packageName}.locales"
     relocate 'de.exlll.configlib', "${packageName}.configlib"
@@ -79,14 +61,6 @@ shadowJar {
 
 tasks.build.dependsOn(shadowJar)
 tasks.publish.dependsOn(shadowJar)
-
-test {
-    useJUnitPlatform()
-    testLogging {
-        events "skipped", "failed"
-    }
-    ignoreFailures = false
-}
 
 processResources {
     project.properties.put("version", this.version)

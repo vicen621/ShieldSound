@@ -8,7 +8,8 @@ package io.github.vicen621.shieldsound;
 import co.aikar.commands.BukkitCommandManager;
 import co.aikar.commands.MessageType;
 import io.github.vicen621.shieldsound.commands.ShieldSoundCommand;
-import io.github.vicen621.shieldsound.config.Configuration;
+import io.github.vicen621.shieldsound.config.Config;
+import io.github.vicen621.shieldsound.config.ConfigManager;
 import io.github.vicen621.shieldsound.listeners.ShieldBreakListener;
 import io.github.vicen621.shieldsound.nms.SSEntityLiving;
 import io.github.vicen621.shieldsound.nms.SSEntityLivingCraftbukkit;
@@ -19,18 +20,14 @@ import lombok.AccessLevel;
 import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
-import org.bukkit.plugin.PluginDescriptionFile;
 import org.bukkit.plugin.java.JavaPlugin;
-import org.bukkit.plugin.java.JavaPluginLoader;
-
-import java.io.File;
 
 public final class ShieldSound extends JavaPlugin {
 
     @Getter
     private static ShieldSound instance;
     @Getter(AccessLevel.PUBLIC)
-    private Configuration configuration;
+    private ConfigManager<Config> configManager;
     @Getter(AccessLevel.PUBLIC)
     private BukkitCommandManager cmdManager;
     @Getter(AccessLevel.PUBLIC)
@@ -44,8 +41,7 @@ public final class ShieldSound extends JavaPlugin {
     public void onEnable() {
         instance = this;
 
-        configuration = new Configuration();
-        configuration.loadAndSave();
+        configManager = new ConfigManager<>(this, "config.yml", Config.class);
         getLogger().info(Utils.format("&7[&3ShieldSound&7] &8> &fLoaded configuration file: config.yml!"));
 
         versionChecker = new VersionChecker(this);
@@ -68,9 +64,10 @@ public final class ShieldSound extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        configuration.save();
+        configManager.saveConfig();
     }
 
+    @SuppressWarnings("deprecation")
     private void commands() {
         cmdManager = new BukkitCommandManager(getInstance());
         cmdManager.enableUnstableAPI("help");
@@ -88,5 +85,9 @@ public final class ShieldSound extends JavaPlugin {
             entityLiving = new SSEntityLivingCraftbukkit();
 
         return entityLiving != null;
+    }
+
+    public Config getConfiguration() {
+        return configManager.getConfig();
     }
 }

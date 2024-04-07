@@ -6,8 +6,9 @@
 package io.github.vicen621.shieldsound.listeners;
 
 import io.github.vicen621.shieldsound.ShieldSound;
-import io.github.vicen621.shieldsound.config.PlayableSound;
+import io.github.vicen621.shieldsound.config.Config;
 import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -31,7 +32,7 @@ public class ShieldBreakListener implements Listener {
                         double health2 = p.getHealth() + ShieldSound.getInstance().getEntityLiving().getAbsorptionAmount(p);
 
                         if (health1 != health2) {
-                            PlayableSound sound = ShieldSound.getInstance().getConfiguration().breakSound;
+                            Config.PlayableSound sound = ShieldSound.getInstance().getConfiguration().breakSound;
                             d.playSound(p.getLocation(), sound.getSound(), sound.getVolume(), sound.getPitch());
                         }
                     } catch (Exception ex) {
@@ -61,7 +62,12 @@ public class ShieldBreakListener implements Listener {
     public boolean isInDisabledWorlds(Location loc) {
         boolean bool = false;
         for (String worldName : ShieldSound.getInstance().getConfiguration().deactivatedWorlds) {
-            bool = loc.getWorld().getName().equalsIgnoreCase(worldName);
+            World world = loc.getWorld();
+
+            if (world == null)
+                continue;
+
+            bool = world.getName().equalsIgnoreCase(worldName);
             if (bool)
                 break;
         }

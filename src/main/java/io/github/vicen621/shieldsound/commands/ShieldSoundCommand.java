@@ -82,7 +82,7 @@ public class ShieldSoundCommand extends BaseCommand {
     @CommandPermission("shieldsound.reload")
     @Description("Reloads the ShieldSound plugin config")
     public void onReload(CommandSender sender) {
-        plugin.getConfiguration().load();
+        plugin.getConfigManager().updateConfig();
 
         sender.sendMessage(Utils.format("&7[&3ShieldSound&7] &8> &aConfig reloaded"));
     }
