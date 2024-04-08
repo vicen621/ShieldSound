@@ -31,7 +31,7 @@ public class ShieldBreakListener implements Listener {
 
                         double health2 = p.getHealth() + ShieldSound.getInstance().getEntityLiving().getAbsorptionAmount(p);
 
-                        if (health1 != health2) {
+                        if (health1 == health2) {
                             Config.PlayableSound sound = ShieldSound.getInstance().getConfiguration().breakSound;
                             d.playSound(p.getLocation(), sound.getSound(), sound.getVolume(), sound.getPitch());
                         }
