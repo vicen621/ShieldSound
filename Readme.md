@@ -25,17 +25,15 @@ You can select on which worlds it works, being compatible with any world manager
 
 ![Default configuration](assets/default-config.png)
 ```yaml
-#                      Plugin made by:
-# ██╗░░░██╗██╗░█████╗░███████╗███╗░░██╗░█████╗░██████╗░░░███╗░░
-# ██║░░░██║██║██╔══██╗██╔════╝████╗░██║██╔═══╝░╚════██╗░████║░░
-# ╚██╗░██╔╝██║██║░░╚═╝█████╗░░██╔██╗██║██████╗░░░███╔═╝██╔██║░░
-# ░╚████╔╝░██║██║░░██╗██╔══╝░░██║╚████║██╔══██╗██╔══╝░░╚═╝██║░░
-# ░░╚██╔╝░░██║╚█████╔╝███████╗██║░╚███║╚█████╔╝███████╗███████╗
-# ░░░╚═╝░░░╚═╝░╚════╝░╚══════╝╚═╝░░╚══╝░╚════╝░╚══════╝╚══════╝
+
+#                        Plugin made by:
+#                           Vicen621
+
 
 # This is the sound played when a player breaks another player's shield.
-# Here you have a list of sounds you can choose from.
-# https://papermc.io/javadocs/paper/1.17/org/bukkit/Sound.html
+# Here you have a list of sounds you can choose from
+# Remember to change the {version} field with your version.
+# https://helpch.at/docs/{version}/org/bukkit/Sound.html
 break_sound:
   sound: ITEM_SHIELD_BREAK
   volume: 1.0
