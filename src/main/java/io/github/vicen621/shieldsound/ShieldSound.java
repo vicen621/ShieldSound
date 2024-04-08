@@ -42,7 +42,7 @@ public final class ShieldSound extends JavaPlugin {
         instance = this;
 
         configManager = new ConfigManager<>(this, "config.yml", Config.class);
-        getLogger().info(Utils.format("&7[&3ShieldSound&7] &8> &fLoaded configuration file: config.yml!"));
+        getLogger().info("[ShieldSound] > Loaded configuration file: config.yml!");
 
         versionChecker = new VersionChecker(this);
         versionChecker.versionCheck(null);
@@ -59,7 +59,7 @@ public final class ShieldSound extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new ShieldBreakListener(), this);
 
-        getLogger().info(Utils.format("&7[&3ShieldSound&7] &8> &fShieldSound has been enabled!"));
+        getLogger().info("[ShieldSound] > ShieldSound has been enabled!");
     }
 
     @Override
