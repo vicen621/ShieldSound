@@ -5,13 +5,16 @@ import de.exlll.configlib.NameFormatters;
 import de.exlll.configlib.YamlConfigurationProperties;
 import de.exlll.configlib.YamlConfigurations;
 import io.github.vicen621.shieldsound.ShieldSound;
+import io.github.vicen621.shieldsound.config.serializers.SoundSerializer;
 import lombok.Getter;
+import org.bukkit.Sound;
 
 import java.io.File;
 
 public class ConfigManager<C> {
     private final ShieldSound plugin;
     private final YamlConfigurationProperties PROPERTIES = ConfigLib.BUKKIT_DEFAULT_PROPERTIES.toBuilder()
+            .addSerializer(Sound.class, new SoundSerializer())
             .setNameFormatter(NameFormatters.LOWER_UNDERSCORE)
             .header("\n                       Plugin made by:\n                          Vicen621")
             .build();

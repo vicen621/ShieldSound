@@ -8,6 +8,7 @@ package io.github.vicen621.shieldsound.config;
 import de.exlll.configlib.Comment;
 import de.exlll.configlib.Configuration;
 import lombok.Data;
+import lombok.Getter;
 import org.bukkit.Sound;
 
 import java.util.Collections;
@@ -23,17 +24,25 @@ public class Config {
             "Remember to change the {version} field with your version.",
             "https://helpch.at/docs/{version}/org/bukkit/Sound.html"
     })
-    public PlayableSound breakSound = new PlayableSound(Sound.ITEM_SHIELD_BREAK.name(), 1, 1);
+    public PlayableSound breakSound = new PlayableSound(Sound.ITEM_SHIELD_BREAK, 1, 1);
     @Comment({"", "List of worlds where the sound will not be played"})
     public List<String> deactivatedWorlds = Collections.singletonList("test");
     @Comment({"", "Enable or disable the update checker"})
     public boolean checkUpdates = true;
 
-    @Data
+    @Getter
     @Configuration
     public static class PlayableSound {
-        private final String sound;
-        private final float volume;
-        private final float pitch;
+        private Sound sound;
+        private float volume;
+        private float pitch;
+
+        public PlayableSound(Sound sound, float volume, float pitch) {
+            this.sound = sound;
+            this.volume = volume;
+            this.pitch = pitch;
+        }
+
+        private PlayableSound() {}
     }
 }
