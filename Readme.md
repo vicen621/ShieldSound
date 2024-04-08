@@ -1,10 +1,10 @@
-![ShieldSound Logo](https://cdn.discordapp.com/attachments/750934684887941140/985646674020016198/3.png)
+![ShieldSound Logo](assets/logo.png)
 
 # ShieldSound
 
 [![Build Status](https://github.com/Vicen621/ShieldSound/workflows/Build/badge.svg)](../../actions?query=workflow%3ABuild)
 [![GitHub release (latest SemVer including pre-releases)](https://img.shields.io/github/v/release/Vicen621/ShieldSound?include_prereleases&label=release)](../../releases)
-![Spiget tested server versions](https://img.shields.io/badge/tested%20versions-1.9--1.19-blue)
+![Spiget tested server versions](https://img.shields.io/badge/tested%20versions-1.9--1.20-blue)
 [![Spiget Downloads](https://img.shields.io/spiget/downloads/102577)](https://www.spigotmc.org/resources/1-9-1-19-shieldsound.102577/)
 [![Spiget Rating](https://img.shields.io/spiget/rating/102577)](https://www.spigotmc.org/resources/1-9-1-19-shieldsound.102577/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-brightgreen.svg)](http://commitizen.github.io/cz-cli/)
@@ -14,16 +14,16 @@
 An easy-to-use plugin that fixes the annoying error of when a shield breaks and does not play the sound
 
 
-![Version](https://cdn.discordapp.com/attachments/750934684887941140/985647024525422632/v.png)
+![Version](assets/version.png)
 It's compatible with 1.9+ onwards
 <br><br>
 
-![Features](https://cdn.discordapp.com/attachments/750934684887941140/985646674233946112/feature.png)
+![Features](assets/features.png)
 You can select the desired sound, which will be heard beside the volume and pitch you choose.
 You can select on which worlds it works, being compatible with any world manager
 <br><br>
 
-![Default configuration](https://cdn.discordapp.com/attachments/750934684887941140/985647790589894656/dg.png)
+![Default configuration](assets/default-config.png)
 ```yaml
 #                      Plugin made by:
 # ██╗░░░██╗██╗░█████╗░███████╗███╗░░██╗░█████╗░██████╗░░░███╗░░
