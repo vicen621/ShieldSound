@@ -1,3 +1,12 @@
+## [1.1.1](https://github.com/vicen621/ShieldSound/compare/v1.1.0...v1.1.1) (2024-04-08)
+
+
+### Bug Fixes
+
+* fixed an error where the sound doesn't play correctly ([7e8d9bb](https://github.com/vicen621/ShieldSound/commit/7e8d9bbd6d450287dde4320d1e52afcff150a4d2))
+* fixed an error with config initialization ([49cabf7](https://github.com/vicen621/ShieldSound/commit/49cabf7fcc1d380d14da1f310fa5433e071f6440))
+* removed unused colors in logger strings ([8b88944](https://github.com/vicen621/ShieldSound/commit/8b889447bac5d7cfe0797772ee0e5b5f26576073))
+
 # [1.1.0](https://github.com/vicen621/ShieldSound/compare/v1.0.3...v1.1.0) (2024-04-07)
 
 
