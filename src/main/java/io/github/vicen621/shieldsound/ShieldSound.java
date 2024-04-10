@@ -12,7 +12,7 @@ import io.github.vicen621.shieldsound.config.Config;
 import io.github.vicen621.shieldsound.config.ConfigManager;
 import io.github.vicen621.shieldsound.listeners.ShieldBreakListener;
 import io.github.vicen621.shieldsound.nms.SSEntityLiving;
-import io.github.vicen621.shieldsound.nms.SSEntityLivingCraftbukkit;
+import io.github.vicen621.shieldsound.nms.SSEntityLivingCraftBukkit;
 import io.github.vicen621.shieldsound.nms.SSEntityLivingSpigot;
 import io.github.vicen621.shieldsound.utils.Utils;
 import io.github.vicen621.shieldsound.utils.VersionChecker;
@@ -82,7 +82,7 @@ public final class ShieldSound extends JavaPlugin {
         if (version >= 14.4) // >= 1.14.4
             entityLiving = new SSEntityLivingSpigot();
         else if (version > 9.0) // >= 1.9
-            entityLiving = new SSEntityLivingCraftbukkit();
+            entityLiving = new SSEntityLivingCraftBukkit();
 
         return entityLiving != null;
     }

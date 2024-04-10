@@ -10,7 +10,7 @@ import org.bukkit.entity.Player;
 
 import java.lang.reflect.Method;
 
-public class SSEntityLivingCraftbukkit implements SSEntityLiving {
+public class SSEntityLivingCraftBukkit implements SSEntityLiving {
     private Method playerHandleMethod, absorptionHeartsMethod;
     private String[] arrayVersion;
 
