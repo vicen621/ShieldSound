@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/vicen621/ShieldSound/compare/v1.1.1...v1.1.2) (2024-04-10)
+
+
+### Bug Fixes
+
+* fixed a bug where if you hit a shield with a sword it triggers the shield sound ([e26a082](https://github.com/vicen621/ShieldSound/commit/e26a08236b4f44e79e64fea4c8f165cb1c651b53))
+
 ## [1.1.1](https://github.com/vicen621/ShieldSound/compare/v1.1.0...v1.1.1) (2024-04-08)
 
 
