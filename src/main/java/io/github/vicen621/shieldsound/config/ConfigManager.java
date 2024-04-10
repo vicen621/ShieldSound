@@ -6,7 +6,6 @@ import de.exlll.configlib.YamlConfigurationProperties;
 import de.exlll.configlib.YamlConfigurations;
 import io.github.vicen621.shieldsound.ShieldSound;
 import io.github.vicen621.shieldsound.config.serializers.SoundSerializer;
-import lombok.Getter;
 import org.bukkit.Sound;
 
 import java.io.File;
@@ -20,7 +19,6 @@ public class ConfigManager<C> {
             .build();
     private final String name;
     private final Class<C> clazz;
-    @Getter
     private C config;
 
     public ConfigManager(ShieldSound plugin, String name, Class<C> clazz) {
@@ -36,5 +34,9 @@ public class ConfigManager<C> {
 
     public void saveConfig() {
         YamlConfigurations.save(new File(plugin.getDataFolder(), name).toPath(), clazz, config, PROPERTIES);
+    }
+
+    public C getConfig() {
+        return config;
     }
 }

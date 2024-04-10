@@ -20,7 +20,8 @@ import org.bukkit.entity.Player;
 
 @CommandAlias("shieldsound|ss")
 public class ShieldSoundCommand extends BaseCommand {
-    private final ShieldSound plugin = ShieldSound.getInstance();
+    @Dependency
+    private ShieldSound plugin;
 
     @Default
     @CatchUnknown

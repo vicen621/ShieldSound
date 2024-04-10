@@ -26,7 +26,7 @@ public class VersionChecker {
     }
 
     public void versionCheck(final Player player) {
-        if (!ShieldSound.getInstance().getConfiguration().checkUpdates)
+        if (!plugin.getConfiguration().checkUpdates)
             return;
 
         plugin.getServer().getScheduler().runTaskAsynchronously(plugin, () -> {
@@ -50,7 +50,7 @@ public class VersionChecker {
                 if (player != null) {
                     player.sendMessage(one);
                     player.playSound(player.getLocation(),
-                            "block." + (ShieldSound.getInstance().getVersion() <= 12 ? "note" : "note_block") + ".pling",
+                            "block." + (plugin.getVersion() <= 12 ? "note" : "note_block") + ".pling",
                             1, 1);
                 } else
                     Bukkit.getLogger().info(one);

@@ -7,8 +7,6 @@ package io.github.vicen621.shieldsound.config;
 
 import de.exlll.configlib.Comment;
 import de.exlll.configlib.Configuration;
-import lombok.Data;
-import lombok.Getter;
 import org.bukkit.Sound;
 
 import java.util.Collections;
@@ -30,7 +28,6 @@ public class Config {
     @Comment({"", "Enable or disable the update checker"})
     public boolean checkUpdates = true;
 
-    @Getter
     @Configuration
     public static class PlayableSound {
         private Sound sound;
@@ -43,6 +40,19 @@ public class Config {
             this.pitch = pitch;
         }
 
-        private PlayableSound() {}
+        private PlayableSound() {
+        }
+
+        public Sound getSound() {
+            return sound;
+        }
+
+        public float getVolume() {
+            return volume;
+        }
+
+        public float getPitch() {
+            return pitch;
+        }
     }
 }

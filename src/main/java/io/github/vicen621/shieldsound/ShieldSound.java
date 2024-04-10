@@ -14,33 +14,20 @@ import io.github.vicen621.shieldsound.listeners.ShieldBreakListener;
 import io.github.vicen621.shieldsound.nms.SSEntityLiving;
 import io.github.vicen621.shieldsound.nms.SSEntityLivingCraftBukkit;
 import io.github.vicen621.shieldsound.nms.SSEntityLivingSpigot;
-import io.github.vicen621.shieldsound.utils.Utils;
 import io.github.vicen621.shieldsound.utils.VersionChecker;
-import lombok.AccessLevel;
-import lombok.Getter;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class ShieldSound extends JavaPlugin {
 
-    @Getter
-    private static ShieldSound instance;
-    @Getter(AccessLevel.PUBLIC)
     private ConfigManager<Config> configManager;
-    @Getter(AccessLevel.PUBLIC)
-    private BukkitCommandManager cmdManager;
-    @Getter(AccessLevel.PUBLIC)
     private VersionChecker versionChecker;
-    @Getter(AccessLevel.PUBLIC)
     private SSEntityLiving entityLiving;
-    @Getter(AccessLevel.PUBLIC)
     private double version;
 
     @Override
     public void onEnable() {
-        instance = this;
-
         configManager = new ConfigManager<>(this, "config.yml", Config.class);
         getLogger().info("[ShieldSound] > Loaded configuration file: config.yml!");
 
@@ -56,8 +43,7 @@ public final class ShieldSound extends JavaPlugin {
             Bukkit.getPluginManager().disablePlugin(this);
             return;
         }
-
-        getServer().getPluginManager().registerEvents(new ShieldBreakListener(), this);
+        new ShieldBreakListener(this);
 
         getLogger().info("[ShieldSound] > ShieldSound has been enabled!");
     }
@@ -69,8 +55,9 @@ public final class ShieldSound extends JavaPlugin {
 
     @SuppressWarnings("deprecation")
     private void commands() {
-        cmdManager = new BukkitCommandManager(getInstance());
+        BukkitCommandManager cmdManager = new BukkitCommandManager(this);
         cmdManager.enableUnstableAPI("help");
+        cmdManager.registerDependency(ShieldSound.class, "plugin", this);
 
         cmdManager.setFormat(MessageType.HELP, ChatColor.DARK_AQUA, ChatColor.AQUA, ChatColor.GRAY, ChatColor.DARK_GRAY);
         cmdManager.registerCommand(new ShieldSoundCommand());
@@ -89,5 +76,21 @@ public final class ShieldSound extends JavaPlugin {
 
     public Config getConfiguration() {
         return configManager.getConfig();
+    }
+
+    public ConfigManager<Config> getConfigManager() {
+        return configManager;
+    }
+
+    public VersionChecker getVersionChecker() {
+        return versionChecker;
+    }
+
+    public SSEntityLiving getEntityLiving() {
+        return entityLiving;
+    }
+
+    public double getVersion() {
+        return version;
     }
 }

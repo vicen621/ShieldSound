@@ -7,7 +7,9 @@ package io.github.vicen621.shieldsound.listeners;
 
 import io.github.vicen621.shieldsound.ShieldSound;
 import io.github.vicen621.shieldsound.config.Config;
-import org.bukkit.*;
+import org.bukkit.Bukkit;
+import org.bukkit.Location;
+import org.bukkit.World;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
@@ -17,7 +19,7 @@ import org.bukkit.scheduler.BukkitRunnable;
 
 public class ShieldBreakListener implements Listener {
     private final ShieldSound plugin;
-    
+
     public ShieldBreakListener(ShieldSound plugin) {
         this.plugin = plugin;
         Bukkit.getServer().getPluginManager().registerEvents(this, plugin);
